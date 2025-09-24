@@ -1,5 +1,6 @@
 const projects = [
   {
+    id: "sidom",
     title: "SIDOM",
     description:
       "Desarrollo completo del sitio web institucional con stack moderno (React, Next.js, Vite, Strapi, TailwindCSS), CMS híbrido visual/headless y arquitectura escalable. Diseño responsive y autenticación privada.",
@@ -7,6 +8,7 @@ const projects = [
     link: "https://www.sidomsuite.com/",
   },
   {
+    id: "eventmedia",
     title: "EventMedia – App de Depósito",
     description:
       "App interna en React Native para mejorar el flujo de trabajo en el depósito técnico de una empresa de espectáculos. Gestión de equipos, inventario y logística operativa.",
@@ -15,6 +17,7 @@ const projects = [
   },
 
   {
+    id: "ecommerce",
     title: "E-commerce personalizado",
     description:
       "Plataforma comercial con integración de pasarelas de pago (PayPal), autenticación social (Google, Facebook) y paneles administrativos dinámicos con control de inventario y usuarios en tiempo real.",
@@ -27,7 +30,7 @@ import withFadeIn from "./withFadeIn";
 
 function Projects() {
   return (
-    <section className="container py-12">
+    <section id="projects" className="container py-12">
       <h2 className="text-3xl font-bold text-gray-800  mb-8 text-center">
         Proyectos Destacados
       </h2>
@@ -54,20 +57,30 @@ function Projects() {
             <p className="text-gray-600 text-base flex-1">
               {project.description}
             </p>
-            {project.link ? (
+            <div className="flex gap-2 mt-2">
+              {project.link ? (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+                >
+                  Ver proyecto
+                </a>
+              ) : (
+                <span className="px-4 py-2 bg-gray-300 text-gray-600 rounded cursor-not-allowed">
+                  No hay link para mostrar
+                </span>
+              )}
               <a
-                href={project.link}
+                href={`/project-info?id=${project.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+                className="px-4 py-2 bg-emerald-600 text-white rounded hover:bg-emerald-700 transition"
               >
-                Ver proyecto
+                Info
               </a>
-            ) : (
-              <span className="inline-block mt-2 px-4 py-2 bg-gray-300 text-gray-600 rounded cursor-not-allowed">
-                No hay link para mostrar
-              </span>
-            )}
+            </div>
           </div>
         ))}
       </div>

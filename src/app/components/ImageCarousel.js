@@ -6,12 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import withFadeIn from "./withFadeIn";
-const images = [
-  { src: "/assets/título.png", alt: "Título" },
-  { src: "/assets/imm.jpeg", alt: "Imagen Imm" },
-];
-
-function ImageCarousel() {
+function ImageCarousel({ images }) {
   return (
     <div className="w-full ">
       <Swiper

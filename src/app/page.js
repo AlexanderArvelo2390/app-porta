@@ -12,9 +12,13 @@ export default function Home() {
       <HeroCover src="/assets/portada (1).gif" alt="Portada principal" />
       <div className="container ">
         <About />
+
         <Projects />
         <SkillsCarousel />
-        <ImageCarousel />
+        <ImageCarousel images={[
+          { src: "/assets/título.png", alt: "Título" },
+          { src: "/assets/imm.jpeg", alt: "Imagen Imm" }
+        ]} />
 
         <ContactForm />
       </div>
