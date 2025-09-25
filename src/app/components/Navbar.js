@@ -4,12 +4,7 @@ import { useState } from "react";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <nav className="w-full flex items-center justify-between py-4 px-8">
-      <h1 className=" flex justify-center items-center text-sm ms:text-2x1 md:text-3xl font-extrabold text-gray-900 dark:text-white lg:text-6xl">
-        <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-          Alexander Arvelo
-        </span>
-      </h1>
+    <nav className="w-full  flex items-center justify-between py-4 px-8">
       {/* Botón hamburguesa solo visible en móviles */}
       <button
         className="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none"

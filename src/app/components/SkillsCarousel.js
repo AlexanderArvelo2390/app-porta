@@ -62,14 +62,14 @@ function SkillSwiper({ skills, title, reverse = false }) {
                 alt={skill.alt}
                 width={64}
                 height={64}
-                className="object-contain grayscale hover:grayscale-0 transition duration-300"
+                className="object-contain "
                 priority={idx === 0}
               />
             ) : (
               <img
                 src={skill.src}
                 alt={skill.alt}
-                className="h-16 w-16 object-contain grayscale hover:grayscale-0 transition duration-300"
+                className="h-16 w-16 object-contain "
                 loading={idx === 0 ? "eager" : "lazy"}
               />
             )}

@@ -1,33 +1,30 @@
 "use client";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
+import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css/pagination";
 import withFadeIn from "./withFadeIn";
 function ImageCarousel({ images }) {
   return (
-    <div className="w-full ">
+    <div className="w-full h-fulls ">
       <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        navigation
-        pagination={{ clickable: true }}
+        modules={[Pagination, Autoplay]}
         autoplay={{
-          delay: 1000,
+          delay: 5000,
           disableOnInteraction: false,
         }}
         speed={8000}
         loop
-        className="rounded-lg shadow-lg"
+        className=""
       >
         {images.map((img, idx) => (
           <SwiperSlide key={idx}>
-            <div className="relative w-full h-64 sm:h-80 flex items-center justify-center">
+            <div className="relative w-full h-64 sm:h-80 flex items-center justify-center bg-gray-100 ">
               <img
                 src={img.src}
                 alt={img.alt}
-                className="object-cover w-full h-full rounded-lg"
+                className="object-contain w-full h-full rounded-lg"
                 loading={idx === 0 ? "eager" : "lazy"}
               />
             </div>
